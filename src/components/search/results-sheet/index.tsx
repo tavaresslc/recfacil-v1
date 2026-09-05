@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ResultDetails } from "./results-details";
 import { ResultsList } from "./results-list";
 import type { SearchResult } from "@/types/search-result";
 import { getMatchColor } from "@/lib/utils/match";
@@ -22,16 +23,11 @@ export function ResultsSheet({ results }: ResultsSheetProps) {
         setSelectedResult={setSelectedResult}
         color={getMatchColor}
       />
-
-      <div
-        className={`${selectedResult ? "flex" : "hidden sm:flex"} flex-1 w-full flex-col items-center justify-center text-center px-8 select-none`}
-      >
-        <p className="text-gray-500 text-sm mt-2 max-w-xs">
-          {selectedResult
-            ? `Em breve: converse com a IA sobre ${selectedResult.name}.`
-            : "Selecione um profissional na lista para ver mais detalhes."}
-        </p>
-      </div>
+      <ResultDetails
+        result={selectedResult}
+        color={getMatchColor}
+        onBack={() => setSelectedResult(null)}
+      />
     </div>
   );
 }
