@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <!-- Gradiente Linear exato (bg-linear-to-br from-blue-600 to-purple-600) -->
+    <linearGradient id="favicon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#9333ea" />
+    </linearGradient>
+  </defs>
+
+  <!-- O fundo ocupa 100% da bandeja (512x512) com cantos perfeitamente arredondados (rx="220") -->
+  <rect width="512" height="512" rx="110" fill="url(#favicon-gradient)" stroke="none" />
+
+  <!-- Ícone redesenhado matematicamente no centro, gerando o padding interno ideal -->
+  <g stroke="#ffffff" stroke-width="32" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Brilho maior centralizado -->
+    <path d="M234.939 123.541a16 16 0 0 1 31.456 0l16.816 88.928a32 32 0 0 0 25.504 25.504l88.928 16.816a16 16 0 0 1 0 31.456l-88.928 16.816a32 32 0 0 0-25.504 25.504l-16.816 88.928a16 16 0 0 1-31.456 0l-16.816-88.928a32 32 0 0 0-25.504-25.504l-88.928-16.816a16 16 0 0 1 0-31.456l88.928-16.816a32 32 0 0 0 25.504-25.504z"/>
+    <!-- Brilho menor (linhas verticais/horizontais no topo direito) -->
+    <path d="M378.667 110.667v64M410.667 142.667h-64"/>
+    <!-- Círculo na parte inferior esquerda -->
+    <circle cx="122.667" cy="398.667" r="32"/>
+  </g>
+</svg>
