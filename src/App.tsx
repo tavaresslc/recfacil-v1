@@ -7,12 +7,14 @@ import {
 import { AppLayout } from "@/components/layout/app-layout";
 import Home from "@/pages/Home";
 import Profile from "@/pages/Profile";
+import ProfileById from "./pages/ProfileById";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<AppLayout />}>
       <Route path="/" element={<Home />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/profile/:id" element={<ProfileById />}/>
     </Route>,
   ),
   {
@@ -25,3 +27,4 @@ function App() {
 }
 
 export default App;
+
