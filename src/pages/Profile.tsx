@@ -38,18 +38,20 @@ export default function Profile() {
   const state = useAuthStore((state) => state.login);
   const { registerForm, unregisterForm } = useProfileFormStore();
 
-  const [user, setUser] = useState<User>({
-    name: "",
-    picture: "",
-    email: "",
-    title: "",
-    phone: "",
-    city: "",
-    state: "",
-    linkedin: "",
-    portfolio: "",
-    chunks: [],
+  const createUserFromAuth = (authUser: User | null): User => ({
+    name: authUser?.name || "",
+    picture: authUser?.picture || "",
+    email: authUser?.email || "",
+    title: authUser?.title || "",
+    phone: authUser?.phone || "",
+    city: authUser?.city || "",
+    state: authUser?.state || "",
+    linkedin: authUser?.linkedin || "",
+    portfolio: authUser?.portfolio || "",
+    chunks: authUser?.chunks || [],
   });
+
+  const [user, setUser] = useState<User>(() => createUserFromAuth(authUser));
 
   const {
     cities,
@@ -65,19 +67,6 @@ export default function Profile() {
   const [submitAttempted, setSubmitAttempted] = useState(false);
 
   const [showSaveDialog, setShowSaveDialog] = useState(false);
-
-  const createUserFromAuth = (authUser: User | null): User => ({
-    name: authUser?.name || "",
-    picture: authUser?.picture || "",
-    email: authUser?.email || "",
-    title: authUser?.title || "",
-    phone: authUser?.phone || "",
-    city: authUser?.city || "",
-    state: authUser?.state || "",
-    linkedin: authUser?.linkedin || "",
-    portfolio: authUser?.portfolio || "",
-    chunks: authUser?.chunks || [],
-  });
 
   const [initialUser, setInitialUser] = useState<User>(() =>
     createUserFromAuth(authUser),
